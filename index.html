@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMMING SOON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"> BRAND NAME</a>
+        <nav>
+            <ul>
+                <li> <a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <img src="images/curve.png" class="wave">
+        <div class="contentBx">
+            <h2>Bhai Birthday Comming Soon</h2>
+            <p></p>
+               <div class="countdown">
+             <div class="time"><div id="day"></div><span>Days</span></div>
+             <div class="time"><div id="hour"></div><span>Hours</span></div>
+             <div class="time"><div id="minute"></div><span>Minutes</span></div>
+             <div class="time"><div id="second"></div><span>Seconds</span></div>
+             
+        </div>
+        <a href="#" onclick="toggle();">Notify me !</a>
+        </div>
+        <div class="imgBx">
+        <img src="images/man.png" alt="">
+        </div>
+        <ul class="sci">
+        <li><a href="#"><img src="images/facebook.png" alt=""></a></li>
+        <li><a href="#"><img src="images/twitter.png" alt=""></a></li>
+        <li><a href="#"><img src="images/instagram.png" alt=""></a></li>
+       </ul>
+
+    </section>
+    <div class="newsletter">
+        <h2>Stay Tuned</h2>
+        <p>Get notified at launch</p>
+        <div class="inputBox">
+            <form>
+                <input type="email" name=""required="" placeholder="Enter Email Address">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <img src="images/close.png" class="close" onclick="toggle();">
+    </div>
+    <script type="text/javascript">
+    function toggle()
+    {
+        var newsletter = document.querySelector('.newsletter');
+        newsletter.classList.toggle('active')
+    }
+
+
+
+
+
+    var countDate = new Date('july 27,2021 00:00:00').getTime();
+
+    function newYear()
+    {
+        var now = new Date().getTime();
+        gap = countDate - now;
+
+        var second = 1000;
+        var minute = second * 60;
+        var hour = minute * 60;
+        var day = hour * 24;
+        
+        var d = Math.floor(gap / (day));
+        var h = Math.floor((gap % (day)) / (hour));
+        var m = Math.floor((gap % (hour)) / (minute));
+        var s = Math.floor((gap % (minute)) / second);
+
+        document.getElementById('day').innerText=d;
+        document.getElementById('hour').innerText=h;
+        document.getElementById('minute').innerText=m;
+        document.getElementById('second').innerText=s;
+
+    }
+
+    setInterval(function()
+    {
+        newYear();
+
+    },1000)
+    </script> 
+
+</body>
+</html>
